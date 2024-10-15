@@ -49,7 +49,7 @@ jobs:
         docker pull searxng/searxng:latest
         new_image="$REGISTRY/$NAMESPACE/$IMAGE:$TAG"
         echo "$new_image"
-        dokcer tag docker.io/searxng/searxng:latest $new_image
+        docker tag docker.io/searxng/searxng:latest $new_image
         docker push $new_image
 
 
