@@ -28,7 +28,7 @@ env:
   REGISTRY: crpi-1qcaf3xdapsfuhwi.cn-hangzhou.personal.cr.aliyuncs.com
   NAMESPACE: moyuchenxin
   IMAGE: searxng
-  TAG: ${{ github.sha }}
+  TAG: latest
 
 permissions:
   contents: read
@@ -46,7 +46,9 @@ jobs:
     - name: Build and push image to ACR
       run: |
         docker login --username=墨语尘心  --password=WYzhai@360521 crpi-1qcaf3xdapsfuhwi.cn-hangzhou.personal.cr.aliyuncs.com
-        docker build --tag "$REGISTRY/$NAMESPACE/$IMAGE:$TAG" .
+        docker pull searxng/searxng:latest
+        dokcer tag searxng/searxng:latest "$REGISTRY/$NAMESPACE/$IMAGE:$TAG" .
+        # docker build --tag "$REGISTRY/$NAMESPACE/$IMAGE:$TAG" .
         docker push "$REGISTRY/$NAMESPACE/$IMAGE:$TAG"
 
 
