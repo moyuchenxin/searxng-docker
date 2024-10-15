@@ -48,6 +48,7 @@ jobs:
         docker login --username=墨语尘心  --password=WYzhai@360521 crpi-1qcaf3xdapsfuhwi.cn-hangzhou.personal.cr.aliyuncs.com
         docker pull searxng/searxng:latest
         new_image="$REGISTRY/$NAMESPACE/$IMAGE:$TAG"
+        echo "$new_image"
         dokcer tag docker.io/searxng/searxng:latest $new_image
         docker push $new_image
 
