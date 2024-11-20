@@ -27,7 +27,7 @@ on:
 env:
   REGISTRY: crpi-1qcaf3xdapsfuhwi.cn-hangzhou.personal.cr.aliyuncs.com
   NAMESPACE: moyuchenxin
-  IMAGE: onlyoffice/documentserver
+  IMAGE: onlyoffice
   TAG: latest
 
 permissions:
