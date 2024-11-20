@@ -45,9 +45,9 @@ jobs:
     # 1.2 Build and push image to ACR
     - name: Build and push image to ACR
       run: |
-        docker login --username=墨语尘心  --password=WYzhai@360521 crpi-1qcaf3xdapsfuhwi.cn-hangzhou.personal.cr.aliyuncs.com
         docker pull onlyoffice/documentserver:latest
         new_image="$REGISTRY/$NAMESPACE/$IMAGE:$TAG"
         echo "$new_image"
         docker tag onlyoffice/documentserver:latest $new_image
+        docker login --username=墨语尘心  --password=WYzhai@360521 crpi-1qcaf3xdapsfuhwi.cn-hangzhou.personal.cr.aliyuncs.com
         docker push $new_image
